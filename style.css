@@ -1,0 +1,72 @@
+/* styles.css */
+img {
+    max-width: 100%;
+    height: auto;
+}
+body, html {
+    margin: 0 auto; /* Centers the content horizontally and maintains no vertical margin */
+    max-width: 1000px; /* Adjust this value based on your design preference */
+    padding: 20px; /* Adds padding around the content inside the body */
+    font-family: Arial, sans-serif;
+    line-height: 1.223;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; }
+
+nav {
+    flex: 1;
+    background-color:  #F6FDFF /*  #F8FDFF #F2FCFF #f5f9fc */;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 260px;
+}
+
+main {
+    flex: 3;
+    padding: 20px;
+
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav, main {
+        width: 100%;
+    }
+}
+
+/* Assuming your navigation links are in a list inside the <nav> tag */
+nav ul li a {
+    display: block;  /* Makes the link fill the entire list item */
+    padding: 10px;   /* Adds some space around the text */
+    text-decoration: none;  /* Removes underline from links */
+    color: black;  /* Sets the text color */
+    transition: background-color 0.3s, color 0.3s;  /* Smooth transition for background and text color */
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color:   #b3e0ff
+
+;  /* Darkens the background on hover */
+    color: white;  /* Changes the text color to white */
+}
