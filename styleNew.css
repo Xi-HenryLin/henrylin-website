@@ -1,0 +1,83 @@
+/* style.css */
+
+/* Include padding in element widths, so nothing overflows on small screens */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;          /* Centers the page */
+    max-width: 1000px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;        /* Was 1.223; more comfortable for paragraphs */
+    color: #222;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Links in the main text: one consistent color instead of browser blue/purple */
+main a {
+    color: #0064a4;
+    text-underline-offset: 2px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+nav {
+    flex: 1;
+    background-color: #F6FDFF;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 260px;
+}
+
+main {
+    flex: 3;
+    padding: 20px;
+    min-width: 0;            /* Lets long titles wrap instead of stretching the layout */
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+/* Sidebar navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.3s;
+}
+
+/* Hover and keyboard focus: dark text stays readable on the light blue */
+nav ul li a:hover,
+nav ul li a:focus-visible {
+    background-color: #b3e0ff;
+    color: black;
+}
+
+/* Small screens: stack sidebar above content, both full width */
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav, main {
+        width: 100%;
+        max-width: none;
+    }
+}
